@@ -1,0 +1,43 @@
+#applicanttable
+{
+        font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+        font-size: 12px;
+        width: 900px;
+        text-align: left;
+        border-collapse: collapse;
+}
+#applicanttable thead th
+{
+        background: #b9c9fe;
+        border-right: 1px solid #fff;
+}
+
+
+#applicanttable tbody tr:hover td
+{
+        background: #d0dafd;
+}
+
+#applicanttable th
+{
+        font-size: 14px;
+        font-weight: normal;
+        padding: 10px 8px;
+        color: #039;
+}
+#applicanttable td
+{
+        padding: 8px;
+        color: #669;
+        background: #e8edff;
+        border-top: 1px solid #fff;
+        border-right: 1px solid #fff;
+}
+#applicanttable a
+{
+        color: #669;
+}
+#applicanttable .odd
+{
+        background: #e8edff;
+}

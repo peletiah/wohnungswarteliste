@@ -1,0 +1,57 @@
+<%inherit file="site.html" />
+
+<div id="content">
+<div id="warteliste" "clearfix">
+<form method="GET" action="/">
+  <span id="applicantinput">
+    <input id="firstname" type="text" name="firstname" /> Vorname<br>
+    <input id="lastname" type="text" name="lastname" /> Nachname<br>
+    <input id="contact" type="text" name="ais" /> AIS<br>
+    <input id="birthdate" type="text" name="birthdate" /> Geburtstag<br>
+    <input id="origin" type="text" name="origin" /> Herkunft<br>
+    <input id="contact" type="text" name="contact" /> Kontakt<br>
+    <textarea name='comment' id='mceEditor' wrap=hard rows='3' cols='100'></textarea><br>
+    <input type="submit" name="applicantsubmit" value="Submit" />
+   </span>
+</form>
+
+<div id="applicantdetail">
+<table id="applicanttable" summary="klienten in der wohnungswarteliste">
+    <thead>
+        <tr>
+            <th scope="col" class="table-name">Name</th>
+            <th scope="col" class="table-name">AIS</th>
+            <th scope="col" class="table-birthdate">Geburtstag</th>
+            <th scope="col" class="table-origin">Herkunft</th>
+            <th scope="col" class="table-contact">Kontakt</th>
+            <th scope="col" class="table-comment">Kommentar</th>
+            <th scope="col" class="table-comment">Meldung</th>
+            <th scope="col" class="table-comment">Aendern</th>
+        </tr>
+    </thead>
+    <tbody>
+% for applicant in c.applicants:
+        <tr>
+            <td>${applicant.lastname} ${applicant.firstname}</td>
+            <td>${applicant.ais}</td>
+            <td><script type="text/javascript">
+                  var str="${applicant.birthdate}";
+                  document.write(str.substring(0,10));
+                 </script></td>
+            <td>${applicant.origin}</td>
+            <td>${applicant.contact}</td>
+            <td><script type="text/javascript">
+                  var str="${applicant.comment}";
+                  document.write(str.substring(0,30));
+                 </script><a href="/warteliste/details/${applicant.id}">...</a></td>
+            <td><a href="/warteliste/presence/${applicant.id}">Anwesenheit</a></td>
+            <td><a href="/warteliste/change/${applicant.id}">Bearbeiten</a></td>
+        </tr>
+% endfor
+      </tbody>
+</table>
+
+</div>
+</div>
+</div>
+

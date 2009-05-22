@@ -1,0 +1,30 @@
+<%def name="title()"></%def>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="/css/main.css" media="screen">
+        <script src="/js/jquery-1.2.6.js" type="text/javascript"></script>
+        <script src="/js/jquery_plugins/ui.datepicker.js" type="text/javascript"></script>
+	<script type="text/javascript" src="/js/punymce/puny_mce.js"></script>
+        <script type="text/javascript" src="/js/punymce/plugins/link/link.js"></script>
+        <script type="text/javascript" src="/js/punymce/plugins/editsource/editsource.js"></script>
+        <script type="text/javascript" src="/js/addremove.js"></script>
+        <title>${self.title()}</title>
+    </head>
+    <body>
+      <!-- *** BEGIN page content *** -->
+	<script type="text/javascript">
+            var editor2 = new punymce.Editor({  
+                id : 'mceEditor',
+                plugins : 'Link,EditSource',
+                toolbar : 'bold,italic,link,editsource',
+                max_width : 500
+            }); 
+        </script>
+
+      ${self.body()}
+      <!-- *** END page content *** -->
+    </body>
+</html>
+

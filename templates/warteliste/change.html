@@ -1,0 +1,20 @@
+<%inherit file="site.html" />
+
+<div id="content">
+<div id="warteliste" "clearfix">
+<form method="GET" action="/warteliste/update/${c.applicant.id}">
+  <span id="applicantinput">
+    <input id="firstname" type="text" name="firstname" value="${c.applicant.firstname}"/> Vorname<br>
+    <input id="lastname" type="text" name="lastname" value="${c.applicant.lastname}" /> Nachname<br>
+    <input id="ais" type="text" name="ais" value="${c.applicant.ais}" /> AIS<br>
+    <input id="birthdate" type="text" name="birthdate" value="${c.applicant.birthdate}"/> Geburtstag<br>
+    <input id="origin" type="text" name="origin" value="${c.applicant.origin}" /> Herkunft<br>
+    <input id="contact" type="text" name="contact" value="${c.applicant.contact}" /> Kontakt<br>
+    <textarea name='comment' id='mceEditor' wrap=hard rows='3' cols='100'>${c.applicant.comment}</textarea><br>
+    <input type="submit" name="applicantsubmit" value="Submit" />
+   </span>
+</form>
+
+</div>
+</div>
+
