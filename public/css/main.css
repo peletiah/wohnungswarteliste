@@ -22,7 +22,7 @@
 {
         font-size: 14px;
         font-weight: normal;
-        padding: 10px 8px;
+        padding: 10px 20px;
         color: #039;
 }
 #applicanttable td
@@ -41,3 +41,20 @@
 {
         background: #e8edff;
 }
+
+/* tables */
+
+#applicanttable thead tr .header { 
+        background-image: url(bg.gif);
+        background-repeat: no-repeat;
+        background-position: center right;
+        cursor: pointer;
+}
+
+#applicanttable thead tr .headerSortUp { 
+        background-image: url(asc.gif);
+}
+#applicanttable thead tr .headerSortDown { 
+        background-image: url(desc.gif);
+}
+

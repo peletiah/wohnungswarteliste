@@ -17,8 +17,9 @@ def init_model(bind):
     engine = bind
     Session = orm.scoped_session(
         orm.sessionmaker(transactional=True, autoflush=True, bind=bind))
-    orm.mapper(applicants, applicants_table,
-        order_by=[applicants_table.c.lastname.desc()])
+    orm.mapper(applicants, applicants_table, properties = {
+        'presences': orm.relation(presence, backref='applicant')
+    }, order_by=[applicants_table.c.lastname.desc()])
 
     orm.mapper(presence, presence_table,
         order_by=[presence_table.c.date.desc()])

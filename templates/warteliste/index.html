@@ -24,6 +24,7 @@
             <th scope="col" class="table-birthdate">Geburtstag</th>
             <th scope="col" class="table-origin">Herkunft</th>
             <th scope="col" class="table-contact">Kontakt</th>
+            <th scope="col" class="table-presence">Anwesenheit</th>
             <th scope="col" class="table-comment">Kommentar</th>
             <th scope="col" class="table-comment">Meldung</th>
             <th scope="col" class="table-comment">Aendern</th>
@@ -40,6 +41,7 @@
                  </script></td>
             <td>${applicant.origin}</td>
             <td>${applicant.contact}</td>
+            <td>${len(applicant.presences)}</td>
             <td><script type="text/javascript">
                   var str="${applicant.comment}";
                   document.write(str.substring(0,30));
