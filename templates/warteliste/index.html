@@ -2,8 +2,9 @@
 
 <div id="content">
 <div id="warteliste" "clearfix">
-<form method="GET" action="/">
-  <span id="applicantinput">
+<button id="button">toggle</button>
+<form id="applicantform" method="GET" action="/">
+  <div id="applicantinput">
     <input id="firstname" type="text" name="firstname" /> Vorname<br>
     <input id="lastname" type="text" name="lastname" /> Nachname<br>
     <input id="contact" type="text" name="ais" /> AIS<br>
@@ -12,7 +13,7 @@
     <input id="contact" type="text" name="contact" /> Kontakt<br>
     <textarea name='comment' id='mceEditor' wrap=hard rows='3' cols='100'></textarea><br>
     <input type="submit" name="applicantsubmit" value="Submit" />
-   </span>
+   </div>
 </form>
 
 <div id="applicantdetail">
