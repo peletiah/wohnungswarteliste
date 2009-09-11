@@ -1,9 +1,74 @@
+@charset "UTF-8";
+/* CSS Document */
+
+ {
+  margin:0;
+     padding:0;
+     }
+
+/* General Style Info */
+
+
+body {
+   background: #FFFFFF;
+   color: #000000;
+   font-family:'lucida grande',verdana,helvetica,arial,sans-serif;
+   font-size:80%;
+   margin: 0;
+}
+
+
+#header{
+   
+   border-bottom: 8px solid #ff9a34;
+   padding: 0;
+   margin: 0;
+   font-size: 80%;
+}
+
+#header h1 {
+   background: #FFFFFF url('/images/logo_kl.gif') no-repeat right;
+   height: 98px;
+   width: 90%;
+   color: #000000;
+}
+
+#header h1 a {
+   color: #000000;
+   background: none;
+   font-weight: normal;
+   text-decoration: none;
+   
+   margin: 30px;
+}
+#header h1 a:hover {
+   color: #000000;
+   background: none;
+   text-decoration: none;
+}
+
+
+#content {
+   background: #ffbf59;
+   
+   clear: both;
+   color: #333;
+   padding: 10px 20px 40px 20px;
+   overflow: auto;
+}
+
+
+
+#button {
+      margin-top: 5px;
+      margin-bottom: 5px;
+}
 
 #applicantinput {
         background: #e8edff;
         padding: 10px 20px 10px 10px;
         width: 500px;
-        margin-top: 10px;
+        margin-bottom: 20px;
 }
 
 #applicanttable
@@ -17,7 +82,7 @@
 #applicanttable thead th
 {
         background: #b9c9fe;
-        border-right: 1px solid #fff;
+        border: 1px solid #fff;
 }
 
 
@@ -38,8 +103,8 @@
         padding: 8px;
         color: #669;
         background: #e8edff;
-        border-top: 1px solid #fff;
-        border-right: 1px solid #fff;
+        border: 1px solid #fff;
+        border: 1px solid #fff;
 }
 #applicanttable a
 {

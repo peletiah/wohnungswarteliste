@@ -1,3 +1,22 @@
+function todayStr() {
+     var today=new Date()
+     day=today.getDate()+''
+     month=(today.getMonth()+1)+''
+     if (day.length==2) {
+      day=day }
+     else {
+      day="0"+day}
+     if (month.length==2) {
+      month=month }
+     else {
+      month="0"+month}
+
+
+     return (today.getYear() + 1900) +"-"+month+"-"+day
+/*     return today.getMonth()+1+"/"+today.getDate()+"/"+(today.getYear() + 1900)*/
+   }
+
+
 var Dom = {
 	get: function(el) {
 		if (typeof el === 'string') {
@@ -39,31 +58,17 @@ var Event = {
 Event.add(window, 'load', function() {
 	var i = 0;
 	var n = 0;
-	Event.add('add-img', 'click', function() {
+	Event.add('add-date', 'click', function() {
 	var del = document.createElement('span');
 	del.innerHTML = '<img src="/images/minus.png"> ';
-	Dom.add(del, 'images');
+	Dom.add(del, 'dates');
 	var el = document.createElement('span');
-	el.innerHTML = '<input name="img'+ ++i +'" type="file" value="img'+ i +'" /> IMG '+ i +' <br />';
-	Dom.add(el, 'images');
+	el.innerHTML = '<input name="date'+ ++i +'" type="text" value='+todayStr()+' /> <br />';
+	Dom.add(el, 'dates');
 		Event.add(del, 'click', function(e) {
 			Dom.remove(el);
 			Dom.remove(this);
 		});
 	});
 
-// Add tag-input-boxes at will
-
-	Event.add('add-tag', 'click', function() {
-		var del = document.createElement('span');
-		del.innerHTML = '<img src="/images/minus.png"> ';
-		Dom.add(del, 'tags');
-		var el = document.createElement('span');
-		el.innerHTML = '<input name="tag'+ ++n +'" type="text" value="tag'+ n +'" /> tag '+ n +' <br />';
-		Dom.add(el, 'tags');
-		Event.add(del, 'click', function(e) {
-			Dom.remove(el);
-			Dom.remove(this);
-		});
-	});
 });

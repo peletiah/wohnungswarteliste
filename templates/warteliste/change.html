@@ -1,5 +1,8 @@
 <%inherit file="site.html" />
+<div id="header">
+         <h1><a href="http://wohnungswarteliste.office.fraubock.at/">Wohnungswarteliste</a></h1>
 
+</div>
 <div id="content">
 <div id="warteliste" "clearfix">
 <form method="GET" action="/warteliste/update/${c.applicant.id}">
@@ -7,12 +10,28 @@
     <input id="firstname" type="text" name="firstname" value="${c.applicant.firstname}"/> Vorname<br>
     <input id="lastname" type="text" name="lastname" value="${c.applicant.lastname}" /> Nachname<br>
     <input id="ais" type="text" name="ais" value="${c.applicant.ais}" /> AIS<br>
+% if c.applicant.birthdate==None:
+    <input id="birthdate" type="text" name="birthdate" value=""/> Geburtstag<br>
+% else:
     <input id="birthdate" type="text" name="birthdate" value="${c.applicant.birthdate}"/> Geburtstag<br>
+% endif
     <input id="origin" type="text" name="origin" value="${c.applicant.origin}" /> Herkunft<br>
     <input id="contact" type="text" name="contact" value="${c.applicant.contact}" /> Kontakt<br>
+<br>
+% for presence in c.presence:
+    <script type="text/javascript">
+       var str="${presence.date}";
+       document.write(str.substring(0,10));
+    </script><br>
+% endfor
+<div id='dateblock'>
+     <img id='add-date' src="/images/plus.png"></img>
+     <div id='dates'></div>
+</div>
+<br> 
     <textarea name='comment' id='mceEditor' wrap=hard rows='3' cols='100'>${c.applicant.comment}</textarea><br>
     <input type="submit" name="applicantsubmit" value="Submit" />
-   </div>
+  </div>
 </form>
 
 </div>

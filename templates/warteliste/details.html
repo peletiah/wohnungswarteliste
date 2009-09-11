@@ -1,5 +1,10 @@
 <%inherit file="site.html" />
 
+<div id="header">
+         <h1><a href="http://wohnungswarteliste.office.fraubock.at/">Wohnungswarteliste</a></h1>
+
+</div>
+
 <div id="content">
 <div id="warteliste" "clearfix">
 
@@ -43,11 +48,7 @@
             <td>Kontakt:</td>
             <td>${c.applicant.contact}</td>
          </tr>
-         <tr>
-            <td>Kommentar:</td>
-            <td>${c.applicant.comment}</td>
-         </tr>
-         <tr>
+        <tr>
             <td>Anwesenheit:</td>
             <td>
 % for presence in c.presence:
@@ -58,6 +59,11 @@
                   <br>
 % endfor
             </td>
+         </tr>
+         <tr>
+            <td>Kommentar:</td>
+            <td>${c.applicant.comment}</td>
+         </tr>
          <tr>
             <td></td>
             <td><a href="/warteliste/change/${c.applicant.id}">Bearbeiten</a></td>
