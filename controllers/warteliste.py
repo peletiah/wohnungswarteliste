@@ -78,18 +78,19 @@ class WartelisteController(BaseController):
          except KeyError, (message):
             i=i+1
       model.Session.commit()
-      redirect_to(controller='warteliste', action='index', id='')
+      redirect_to(controller='warteliste', action='details', id=id)
      
    def presence(self,id):
       q=model.Session.query(model.presence)
-      if q.filter(and_(model.presence.date==str(datetime.date.today())+' 00:00:00',model.presence.applicants==id)).count() >= 1:
-         redirect_to(controller='warteliste', action='index', id='')
+      if q.filter(and_(model.presence.date >= str(datetime.date.today())[0:10],model.presence.date < str(datetime.date.today())+' 23:59:59',model.presence.applicants==id)).count() >= 1:
+         redirect_to(controller='warteliste', action='details', id=id)
       else:
          presence=model.presence()
          presence.applicants=id
+         presence.date=datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
          model.Session.save(presence)
          model.Session.commit()
-         redirect_to(controller='warteliste', action='index', id='')
+         redirect_to(controller='warteliste', action='details', id=id)
 
    def details(self,id):
       q=model.Session.query(model.applicants)
